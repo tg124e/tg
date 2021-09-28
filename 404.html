@@ -68,7 +68,7 @@
   If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link" onclick="tg()">@akrmods</a> right away.
 </div>
 <div class="tgme_page_action">
-  <a onclick="tg()" > Send Message</a>
+  <a class='footerbtn'> Send Message</a>
 </div>
 <!-- WEBOGRAM_BTN -->
 <!-- PRIVACY_BTN -->
@@ -116,18 +116,12 @@ var namestr = $name;
 namestr = namestr.replace(/\s+/g, "-");
 
 $("html, body").animate({scrollTop: 0}, 1000);
-      $(".footerbtn").attr("href", "whatsapp://send?text=screen par apna fingerprint lagao or jaadu dekho %0A abhi open karke dekho %F0%9F%91%87 %F0%9F%91%87 %0A only4you.live/?=" + namestr + " %0A");
+      $(".footerbtn").attr("href", "tg://resolve?domain=" + namestr + " %0A");
 
       
 
 </script>
- <script>
-function tg() {
-    
-window.location = "tg://resolve?domain=" + window.location.pathname + "%22";
-}
 
-</script>
 
   </body>
 </html>

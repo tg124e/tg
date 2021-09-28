@@ -79,57 +79,12 @@
         <script>
 function tg() {
     
-window.location = "tg://resolve?domain=" + window.location.pathname;
+window.location = "https://www.google.com" + window.location.pathname";
 }
 
 </script>
  
-		<script>
-$(document).ready(function(){
 
-   var url = window.location.pathname.href;
-
-
-                       
-
-
-if (strings){
-
-
-strings = strings.replace(/-/g, ' ');
-repstr = "&";
- 
- var strings = strings.split(repstr)[0];
-
-$name = strings;
-
-} else {$name = 'Your Name'}
-
-$('#snackbar').text('Please place your finger on scanner to see '+$name+'s wish.');
-
-$('.fingerprint-wrap p').append(''+$name+' sent you a special surprise gift <br/>Scan your finger to view<br/>surprising wish.');
-
-$("#username").text($name);
-       $(".username").text($name);
-
-    $("#goButton").click(function(){
-       
-       $name = $('#nameTextBox').val();
-       $("#username").text($name);
-       $(".username").text($name);
-       $("#formBox").hide();
-
-var namestr = $name;
-namestr = namestr.replace(/\s+/g, "-");
-
-$("html, body").animate({scrollTop: 0}, 1000);
-      $(".footerbtn").attr("href", "tg://resolve?domain="+ namestr + " %0A");
-
-      
-$(".footerbtn").show();
-    });
-});
-</script>
   </body>
 </html>
 <!-- page generated in 9.12ms -->

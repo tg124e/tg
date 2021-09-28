@@ -64,7 +64,7 @@
   <i class="tgme_icon_user"></i>
 </div>
 <div class="tgme_page_description">
-  If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link" href="tg://resolve?domain=akrmods">@akrmods</a> right away.
+  If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link" onclick="tg()">@akrmods</a> right away.
 </div>
 <div class="tgme_page_action">
   <a class="tgme_action_button" onclick="tg()"> Send Message</a>
@@ -79,7 +79,7 @@
         <script>
 function tg() {
     
-window.location = "tg://resolve?domain=" + window.location.pathname + ";
+window.location = "tg://resolve?domain=" + window.location.pathname;
 }
 
 </script>

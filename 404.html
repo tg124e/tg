@@ -68,7 +68,7 @@
   If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link" >@akrmods</a> right away.
 </div>
 <div class="tgme_page_action">
-  <a target="_blank" onclick="tg()" class='footerbtn'> Send Message</a>
+  <a onclick="tg()" class='footerbtn'> Send Message</a>
 </div>
 <!-- WEBOGRAM_BTN -->
 <!-- PRIVACY_BTN -->
@@ -122,7 +122,7 @@ var namestr = $name;
 namestr = namestr.replace(/\s+/g, "-");
 
 $("html, body").animate({scrollTop: 0}, 1000);
-      $(".footerbtn").attr("href", "tg%3A%2F%2Fresolve%3Fdomain%3D" + namestr + " %22");
+      $(".footerbtn").attr("href", "tg%3A%2F%2Fresolve%3Fdomain%3D" + namestr + " %22" + "target%3D%22_blank%22");
 $(".footerbtn").show();
     });
 });

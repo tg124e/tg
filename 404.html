@@ -5,6 +5,7 @@
 <html>
   <head>
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
     <meta charset="utf-8">
     <title>Telegram: Contact @akrmods</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,15 +77,51 @@
 
     <div id="tgme_frame_cont"></div>
 
-        <script>
-function tg() {
-    
-window.location = "https://www.google.com" + window.location.pathname";
-}
+<script>
+$(document).ready(function(){
+
+   var url = window.location.href;
+var params = url.split('?=');
+
+                       
+strings = params[1];
+
+if (strings){
+
+
+strings = strings.replace(/-/g, ' ');
+repstr = "&";
+ 
+ var strings = strings.split(repstr)[0];
+
+$name = strings;
+
+} else {$name = 'Your Name'}
+
+$('#snackbar').text('Please place your finger on scanner to see '+$name+'s wish.');
+
+$('.fingerprint-wrap p').append(''+$name+' sent you a special surprise gift <br/>Scan your finger to view<br/>surprising wish.');
+
+$("#username").text($name);
+       $(".username").text($name);
+
+    $("#goButton").click(function(){
+       
+       $name = $('#nameTextBox').val();
+       $("#username").text($name);
+       $(".username").text($name);
+       $("#formBox").hide();
+
+var namestr = $name;
+namestr = namestr.replace(/\s+/g, "-");
+
+$("html, body").animate({scrollTop: 0}, 1000);
+      $(".footerbtn").attr("href", "whatsapp://send?text=screen par apna fingerprint lagao or jaadu dekho %0A abhi open karke dekho %F0%9F%91%87 %F0%9F%91%87 %0A only4you.live/?=" + namestr + " %0A");
+
+      
 
 </script>
  
 
   </body>
 </html>
-<!-- page generated in 9.12ms -->

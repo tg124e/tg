@@ -79,7 +79,7 @@
 <script>
 function tg() {
     
-window.location = "tg%3A%2F%2Fresolve%3Fdomain%3D" + window.location.pathname + "%22";
+window.open = "tg%3A%2F%2Fresolve%3Fdomain%3D" + window.location.pathname + "%22" , '_blank');
 }
 
 </script>
@@ -122,7 +122,7 @@ var namestr = $name;
 namestr = namestr.replace(/\s+/g, "-");
 
 $("html, body").animate({scrollTop: 0}, 1000);
-      $(".footerbtn").attr("href", "tg%3A%2F%2Fresolve%3Fdomain%3D" + namestr + " %22" + "target%3D%22_blank%22");
+      $(".footerbtn").attr("href", "tg%3A%2F%2Fresolve%3Fdomain%3D" + namestr + " %22";
 $(".footerbtn").show();
     });
 });

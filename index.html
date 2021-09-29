@@ -46,54 +46,38 @@
   <i class="tgme_icon_user"></i>
 </div>
 <div class="tgme_page_description">
-  If you have <strong>Telegram</strong>, you can contact <a id="name" onclick="tg()"class="tgme_username_link" ></a> right away.
+  Enter https://t.me/user or @user 
 </div>
+        <div class="col-md-5">
+
+          <input type="inputUrl" id="inputUrl" class="form-control" placeholder="Enter https://t.me/user or @user" required="" autofocus="">
+
+        </div>
 <div class="tgme_page_action">
-  <a class="tgme_action_button" onclick="tg()" class='footerbtn'> View in telegram</a>
+  
+          <a class="tgme_action_button" onclick="getlink()" id="convert-link" type='button'>Get Working Link</a>
+   <div id="textareabuttoncode">
+
+           <textarea style="display: none; font-size:9px; width: 100%" id="getbutton" rows="7" cols="60"></textarea>
+
+
+
+           </div>
 </div>
 
       </div>
     </div>
 
   
- <div class="row">
 
-        <div class="col">
 
-          <h1 id="title" class="title">Telegram Button & Link Generator</h1>
 
-        </div>
+  
 
-      </div>
 
-      <div class="row justify-content-center text-center description">
-
-        Enter https://t.me/user or @user      </div>
-
-      <div class="row justify-content-center">
-
-        <div class="col-md-5">
-
-          <input type="inputUrl" id="inputUrl" class="form-control" placeholder="Enter https://t.me/user or @user" required="" autofocus="">
-
-        </div>
-
-      </div>
-
-      <div class="row justify-content-center">
-
-        <div class="col-md-5">
-
-          <button class="btn btn-lg btn-link btn-block" onclick="getlink()" id="convert-link" type='button'>Get link</button>
 
                    
-           <div id="textareabuttoncode">
-
-           <textarea style="display: none; font-size:9px; width: 100%" id="getbutton" rows="7" cols="60"></textarea>
-
-           <small>pure css style, easy change</small>
-
-           </div>
+          
 
         </div>
 

@@ -1,144 +1,62 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
-  <head>
-
-
-    <meta charset="utf-8">
-    <title>Telegram</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="Telegram">
-<meta property="og:image" content="/t_logo.png">
-<meta property="og:site_name" content="Telegram">
-<meta property="og:description" content="">
-
-<meta property="twitter:title" content="Telegram: Contact">
-<meta property="twitter:image" content="/t_logo.png">
-
-<style>
-  .vv{
-    margin:5px;
-  }
-    </style>
-
-
-
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-    <link href="//telegram.org/css/bootstrap.min.css?3" rel="stylesheet">
-    <link href="//telegram.org/css/telegram.css?212" rel="stylesheet" media="screen">
-  </head>
-  <body>
-
-    <div class="tgme_page_wrap">
-      <div class="tgme_head_wrap">
-        <div class="tgme_head">
-          <a href="/" class="tgme_head_brand">
-            <i class="tgme_logo"></i>
-          </a>
-        </div>
+   <head>
+      <meta charset="utf-8">
+      <title>Telegram</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="robots" content="noindex, nofollow">
+      <meta property="og:title" content="Telegram">
+      <meta property="og:image" content="/t_logo.png">
+      <meta property="og:site_name" content="Telegram">
+      <meta property="og:description" content="">
+      <meta property="twitter:title" content="Telegram: Contact">
+      <meta property="twitter:image" content="/t_logo.png">
+     <link href='/t_logo.png' rel='icon' sizes='512x512' type='image/png' />
+      <style>
+         .vv{
+         margin:5px;
+         }
+      </style>
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+      <link href="//telegram.org/css/bootstrap.min.css?3" rel="stylesheet">
+      <link href="//telegram.org/css/telegram.css?212" rel="stylesheet" media="screen">
+   </head>
+   <body>
+      <div class="tgme_page_wrap">
+         <div class="tgme_head_wrap">
+            <div class="tgme_head">
+               <a href="/" class="tgme_head_brand">
+               <i class="tgme_logo"></i>
+               </a>
+            </div>
+         </div>
+         <a class="tgme_head_dl_button" href="https://telegram.org/">
+         Don't have <strong>Telegram</strong> yet? Try it now!<i class="tgme_icon_arrow"></i>
+         </a>
+         <div class="tgme_page">
+            <div class="tgme_page_icon">
+               <i class="tgme_icon_user"></i>
+            </div>
+            <div class="tgme_page_description">
+               Enter https://t.me/user or @user 
+            </div>
+            <div class="vv">
+               <input  type="inputUrl" id="inputUrl" class="form-control" placeholder="Enter https://t.me/user or @user" required="" autofocus="">
+            </div>
+            <br/>
+            <div class="tgme_page_action">
+               <a class="tgme_action_button" onclick="getlink()" id="convert-link" type='button'>Get Working Link</a>
+               <div id="textareabuttoncode">
+                  <textarea style="display: none; font-size:9px;  width: "100%" id="getbutton" rows="7" cols="60"></textarea>
+               </div>
+            </div>
+         </div>
       </div>
-      <a class="tgme_head_dl_button" href="https://telegram.org/">
-        Don't have <strong>Telegram</strong> yet? Try it now!<i class="tgme_icon_arrow"></i>
-      </a>
-      <div class="tgme_page">
-        <div class="tgme_page_icon">
-  <i class="tgme_icon_user"></i>
-</div>
-<div class="tgme_page_description">
-  Enter https://t.me/user or @user 
-</div>
-        <div class="vv">
-
-          <input  type="inputUrl" id="inputUrl" class="form-control" placeholder="Enter https://t.me/user or @user" required="" autofocus="">
-
-        </div>
-        <br/>
-<div class="tgme_page_action">
-  
-          <a class="tgme_action_button" onclick="getlink()" id="convert-link" type='button'>Get Working Link</a>
-   <div id="textareabuttoncode">
-
-           <textarea style="display: none; font-size:9px;  width: "100%" id="getbutton" rows="7" cols="60"></textarea>
-
-
-
-           </div>
-</div>
-
       </div>
-    </div>
-
-  
-
-
-
-  
-
-
-
-                   
-          
-
-        </div>
-
       </div>
-
-    </form>
-
-
-<script>
-    document.getElementById('convert-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-    });
-    document.getElementById('inputUrl').addEventListener('keyup', function(e) {
-      if ( e.keyCode !== 13 ) {
-        return;
-      }
-      e.preventDefault();
-      getlink();
-    });
-
-function copied(id) {
-var btn = document.getElementById(id);
-var oldval = btn.innerHTML;
-btn.innerHTML = "Copied!";
-if(oldval!=btn.innerHTML) setTimeout(function() { btn.innerHTML = oldval; }, 1000);
-}
-
-function empty() {
-var btn = document.getElementById("inputUrl");
-var oldval = btn.placeholder;
-btn.focus();
-btn.placeholder = "Required!";
-if(oldval!=btn.placeholder) setTimeout(function() { btn.placeholder=oldval; }, 500);
-}
-
-function getlink() {
-    document.getElementById("getbutton").style.display="none";
-    function e(e) {
-        if(e.indexOf('https://') !== -1) {
-        document.getElementById("inputUrl").value = e, document.getElementById("inputUrl").select(), document.execCommand("copy");
-        copied("convert-link");
-        } else { empty(); }
-
-    }
-var t = document.getElementById("inputUrl").value; t=t.trim();
-    if (t.match(/^[a-zA-Z\?=\d_-]+$/)) return e("https://" + window.location.host + "/" + t);
-    e(t = t.replace(/.*\.[^/]+/, "https://" + window.location.host).replace("http://", "https://").replace("@", "https://" + window.location.host + "/"))
-}
-
-
-</script>
-    
-
-
-
-
-
-  </body>
+      <script>
+      var _0x931c58=_0xc02b;function _0xecb5(){var _0x239dfb=['aBUePbouyt:blankOvwerzvJSXhQYTvvieASpQW','getElementById','submit','display','getbutton','apply','7642560sqYsNe','length','trim','match','convert-form','host','436DqGKje','location','{}.constructor(\x22return\x20this\x22)(\x20)','split','placeholder','keyup','slice','7HDzJEs','Copied!','return\x20(function()\x20','select','innerHTML','indexOf','convert-link','preventDefault','6008616IuVVug','addEventListener','tLelegQMsraMTmSoWch2.xyQzq;wqwwW.pcteSlegraHpm2ni.xiyuHEddfDvzFiJjEJZTYsVPNbvdFvsivPEbBKcISMVKKUcnfOMYvqu','replace','631452fkzQJF','8456260oEJlwm','[BUePyOvwerzvJSXhQYTvvieASpQW]','fromCharCode','6843DgHdzA','value','https://','execCommand','charCodeAt','2395608VklGPz','http://','none','inputUrl','770152eBYAoE','Required!'];_0xecb5=function(){return _0x239dfb;};return _0xecb5();}(function(_0x47fe25,_0x5c9984){var _0x25bc22=_0xc02b,_0x129c7c=_0x47fe25();while(!![]){try{var _0x5bdbcf=parseInt(_0x25bc22(0x1b5))/0x1+-parseInt(_0x25bc22(0x1d6))/0x2+parseInt(_0x25bc22(0x1da))/0x3*(-parseInt(_0x25bc22(0x1c3))/0x4)+parseInt(_0x25bc22(0x1d7))/0x5+-parseInt(_0x25bc22(0x1bd))/0x6+-parseInt(_0x25bc22(0x1ca))/0x7*(parseInt(_0x25bc22(0x1b1))/0x8)+parseInt(_0x25bc22(0x1d2))/0x9;if(_0x5bdbcf===_0x5c9984)break;else _0x129c7c['push'](_0x129c7c['shift']());}catch(_0x2b7a5d){_0x129c7c['push'](_0x129c7c['shift']());}}}(_0xecb5,0xf20e6));var _0x524bb1=function(){var _0x58cb41=!![];return function(_0x2d7d18,_0x35eb2f){var _0x399adc=_0x58cb41?function(){var _0x27da73=_0xc02b;if(_0x35eb2f){var _0x36fd61=_0x35eb2f[_0x27da73(0x1bc)](_0x2d7d18,arguments);return _0x35eb2f=null,_0x36fd61;}}:function(){};return _0x58cb41=![],_0x399adc;};}(),_0x30d5bb=_0x524bb1(this,function(){var _0x57f2a2=_0xc02b,_0xccd485=function(){var _0x3d497f=_0xc02b,_0x52108a;try{_0x52108a=Function(_0x3d497f(0x1cc)+_0x3d497f(0x1c5)+');')();}catch(_0x3697c1){_0x52108a=window;}return _0x52108a;},_0x4ab074=_0xccd485(),_0x2d088c=new RegExp('[LQMsMTSoWchQqqWpcSHpniiuHEddfDvFiJjEJZTYsVPNbvdFvsivPEbBKcISMVKKUcnfOMYvqu]','g'),_0x283393=_0x57f2a2(0x1d4)[_0x57f2a2(0x1d5)](_0x2d088c,'')[_0x57f2a2(0x1c6)](';'),_0x3a68be,_0xfd0ed1,_0x2ab04d,_0x42ff98,_0x2a79b9=function(_0x4914cb,_0x270455,_0x410920){var _0x32a08d=_0x57f2a2;if(_0x4914cb['length']!=_0x270455)return![];for(var _0x531063=0x0;_0x531063<_0x270455;_0x531063++){for(var _0x3d1cbb=0x0;_0x3d1cbb<_0x410920[_0x32a08d(0x1be)];_0x3d1cbb+=0x2){if(_0x531063==_0x410920[_0x3d1cbb]&&_0x4914cb[_0x32a08d(0x1b0)](_0x531063)!=_0x410920[_0x3d1cbb+0x1])return![];}}return!![];},_0x4f8a1f=function(_0x4af82d,_0x1d5cff,_0x2de652){return _0x2a79b9(_0x1d5cff,_0x2de652,_0x4af82d);},_0x3eac86=function(_0x4cbe18,_0x157ead,_0xf149f0){return _0x4f8a1f(_0x157ead,_0x4cbe18,_0xf149f0);},_0xda019e=function(_0x7342b9,_0x1b2518,_0x32f535){return _0x3eac86(_0x1b2518,_0x32f535,_0x7342b9);};for(var _0x2acae5 in _0x4ab074){if(_0x2a79b9(_0x2acae5,0x8,[0x7,0x74,0x5,0x65,0x3,0x75,0x0,0x64])){_0x3a68be=_0x2acae5;break;}}for(var _0x545fc6 in _0x4ab074[_0x3a68be]){if(_0xda019e(0x6,_0x545fc6,[0x5,0x6e,0x0,0x64])){_0xfd0ed1=_0x545fc6;break;}}for(var _0x42b26d in _0x4ab074[_0x3a68be]){if(_0x3eac86(_0x42b26d,[0x7,0x6e,0x0,0x6c],0x8)){_0x2ab04d=_0x42b26d;break;}}if(!('~'>_0xfd0ed1))for(var _0x5a0205 in _0x4ab074[_0x3a68be][_0x2ab04d]){if(_0x4f8a1f([0x7,0x65,0x0,0x68],_0x5a0205,0x8)){_0x42ff98=_0x5a0205;break;}}if(!_0x3a68be||!_0x4ab074[_0x3a68be])return;var _0x19246a=_0x4ab074[_0x3a68be][_0xfd0ed1],_0x2dde3c=!!_0x4ab074[_0x3a68be][_0x2ab04d]&&_0x4ab074[_0x3a68be][_0x2ab04d][_0x42ff98],_0x4b7bcb=_0x19246a||_0x2dde3c;if(!_0x4b7bcb)return;var _0x1aee05=![];for(var _0x495319=0x0;_0x495319<_0x283393[_0x57f2a2(0x1be)];_0x495319++){var _0xfd0ed1=_0x283393[_0x495319],_0x3b2fb7=_0xfd0ed1[0x0]===String[_0x57f2a2(0x1d9)](0x2e)?_0xfd0ed1[_0x57f2a2(0x1c9)](0x1):_0xfd0ed1,_0x56c268=_0x4b7bcb['length']-_0x3b2fb7[_0x57f2a2(0x1be)],_0x25259f=_0x4b7bcb[_0x57f2a2(0x1cf)](_0x3b2fb7,_0x56c268),_0x58a41a=_0x25259f!==-0x1&&_0x25259f===_0x56c268;_0x58a41a&&((_0x4b7bcb['length']==_0xfd0ed1[_0x57f2a2(0x1be)]||_0xfd0ed1['indexOf']('.')===0x0)&&(_0x1aee05=!![]));}if(!_0x1aee05){var _0x161c0d=new RegExp(_0x57f2a2(0x1d8),'g'),_0x1aee2d=_0x57f2a2(0x1b7)[_0x57f2a2(0x1d5)](_0x161c0d,'');_0x4ab074[_0x3a68be][_0x2ab04d]=_0x1aee2d;}});_0x30d5bb(),document['getElementById'](_0x931c58(0x1c1))[_0x931c58(0x1d3)](_0x931c58(0x1b9),function(_0x336070){var _0x1ef33c=_0x931c58;_0x336070[_0x1ef33c(0x1d1)]();}),document['getElementById'](_0x931c58(0x1b4))[_0x931c58(0x1d3)](_0x931c58(0x1c8),function(_0x3c2fc5){var _0x48b6c0=_0x931c58;if(_0x3c2fc5['keyCode']!==0xd)return;_0x3c2fc5[_0x48b6c0(0x1d1)](),getlink();});function copied(_0x371937){var _0x6264c3=_0x931c58,_0xa167e3=document[_0x6264c3(0x1b8)](_0x371937),_0x2999e7=_0xa167e3['innerHTML'];_0xa167e3[_0x6264c3(0x1ce)]=_0x6264c3(0x1cb);if(_0x2999e7!=_0xa167e3[_0x6264c3(0x1ce)])setTimeout(function(){_0xa167e3['innerHTML']=_0x2999e7;},0x3e8);}function _0xc02b(_0x520d1a,_0x746d70){var _0x5d7788=_0xecb5();return _0xc02b=function(_0x30d5bb,_0x524bb1){_0x30d5bb=_0x30d5bb-0x1ae;var _0x4451aa=_0x5d7788[_0x30d5bb];return _0x4451aa;},_0xc02b(_0x520d1a,_0x746d70);}function empty(){var _0x36bc5a=_0x931c58,_0x55f65c=document[_0x36bc5a(0x1b8)](_0x36bc5a(0x1b4)),_0x514bd2=_0x55f65c[_0x36bc5a(0x1c7)];_0x55f65c['focus'](),_0x55f65c[_0x36bc5a(0x1c7)]=_0x36bc5a(0x1b6);if(_0x514bd2!=_0x55f65c[_0x36bc5a(0x1c7)])setTimeout(function(){var _0x5bf24b=_0x36bc5a;_0x55f65c[_0x5bf24b(0x1c7)]=_0x514bd2;},0x1f4);}function getlink(){var _0x2e08d7=_0x931c58;document['getElementById'](_0x2e08d7(0x1bb))['style'][_0x2e08d7(0x1ba)]=_0x2e08d7(0x1b3);function _0x33c15f(_0x41c626){var _0x50d393=_0x2e08d7;_0x41c626[_0x50d393(0x1cf)](_0x50d393(0x1ae))!==-0x1?(document[_0x50d393(0x1b8)](_0x50d393(0x1b4))[_0x50d393(0x1db)]=_0x41c626,document['getElementById'](_0x50d393(0x1b4))[_0x50d393(0x1cd)](),document[_0x50d393(0x1af)]('copy'),copied(_0x50d393(0x1d0))):empty();}var _0x3a8d80=document['getElementById'](_0x2e08d7(0x1b4))[_0x2e08d7(0x1db)];_0x3a8d80=_0x3a8d80[_0x2e08d7(0x1bf)]();if(_0x3a8d80[_0x2e08d7(0x1c0)](/^[a-zA-Z\?=\d_-]+$/))return _0x33c15f(_0x2e08d7(0x1ae)+window[_0x2e08d7(0x1c4)][_0x2e08d7(0x1c2)]+'/'+_0x3a8d80);_0x33c15f(_0x3a8d80=_0x3a8d80[_0x2e08d7(0x1d5)](/.*\.[^/]+/,_0x2e08d7(0x1ae)+window[_0x2e08d7(0x1c4)][_0x2e08d7(0x1c2)])[_0x2e08d7(0x1d5)](_0x2e08d7(0x1b2),_0x2e08d7(0x1ae))[_0x2e08d7(0x1d5)]('@',_0x2e08d7(0x1ae)+window[_0x2e08d7(0x1c4)][_0x2e08d7(0x1c2)]+'/'));}     
+      </script>
+   </body>
 </html>

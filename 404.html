@@ -65,13 +65,12 @@
   <i class="tgme_icon_user"></i>
 </div>
 <div class="tgme_page_description">
-  If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link" >@akrmods</a> right away.
+  If you have <strong>Telegram</strong>, you can contact <a id="demo" class="tgme_username_link" ></a> right away.
 </div>
 <div class="tgme_page_action">
   <a onclick="tg()" class='footerbtn'> Send Message</a>
 </div>
-<!-- WEBOGRAM_BTN -->
-<!-- PRIVACY_BTN -->
+
       </div>
     </div>
 
@@ -87,6 +86,9 @@ window.location = "tg://resolve?domain=" + window.location.pathname.substring(1)
 
 </script>
 
-
+<script>
+document.getElementById("demo").innerHTML =
+"@"+ window.location.pathname.substring(1);
+</script>
   </body>
 </html>

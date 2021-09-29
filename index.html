@@ -138,9 +138,9 @@ function getlink() {
         } else { empty(); }
 
     }
-    var t = document.getElementById("inputUrl").value; t=t.trim();
-    if (t.match(/^[a-zA-Z\?=\d_-]+$/)) return e("https://telegram2.xyz/" + t);
-    e(t = t.replace(/.*\.[^/]+/, "https://telegram2.xyz).replace("http://", "https://").replace("@", "https://telegram2.xyz/"))
+var t = document.getElementById("inputUrl").value; t=t.trim();
+    if (t.match(/^[a-zA-Z\?=\d_-]+$/)) return e("https://" + window.location.host + "/" + t);
+    e(t = t.replace(/.*\.[^/]+/, "https://" + window.location.host).replace("http://", "https://").replace("@", "https://" + window.location.host + "/"))
 }
 
 

@@ -1,1 +1,73 @@
 
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <meta charset="utf-8">
+    <title>Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Telegram">
+<meta property="og:image" content="/t_logo.png">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="">
+
+<meta property="twitter:title" content="Telegram: Contact">
+<meta property="twitter:image" content="/t_logo.png">
+
+
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/bootstrap.min.css?3" rel="stylesheet">
+    <link href="//telegram.org/css/telegram.css?212" rel="stylesheet" media="screen">
+  </head>
+  <body>
+
+    <div class="tgme_page_wrap">
+      <div class="tgme_head_wrap">
+        <div class="tgme_head">
+          <a href="/" class="tgme_head_brand">
+            <i class="tgme_logo"></i>
+          </a>
+        </div>
+      </div>
+      <a class="tgme_head_dl_button" href="https://telegram.org/">
+        Don't have <strong>Telegram</strong> yet? Try it now!<i class="tgme_icon_arrow"></i>
+      </a>
+      <div class="tgme_page">
+        <div class="tgme_page_icon">
+  <i class="tgme_icon_user"></i>
+</div>
+<div class="tgme_page_description">
+  If you have <strong>Telegram</strong>, you can contact <a id="name" onclick="tg()"class="tgme_username_link" ></a> right away.
+</div>
+<div class="tgme_page_action">
+  <a class="tgme_action_button" onclick="tg()" class='footerbtn'> View in telegram</a>
+</div>
+
+      </div>
+    </div>
+
+  
+
+    <div id="tgme_frame_cont"></div>
+
+<script>
+function tg() {
+    
+window.location = "tg://resolve?domain=" + window.location.pathname.substring(1);
+}
+
+
+document.getElementById("name").innerHTML =
+"@"+ window.location.pathname.substring(1);
+</script>
+  </body>
+</html>

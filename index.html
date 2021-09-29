@@ -56,18 +56,100 @@
     </div>
 
   
+ <div class="row">
 
-    <div id="tgme_frame_cont"></div>
+        <div class="col">
+
+          <h1 id="title" class="title">Telegram Button & Link Generator</h1>
+
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center text-center description">
+
+        Enter https://t.me/user or @user      </div>
+
+      <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+          <input type="inputUrl" id="inputUrl" class="form-control" placeholder="Enter https://t.me/user or @user" required="" autofocus="">
+
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+          <button class="btn btn-lg btn-link btn-block" onclick="getlink()" id="convert-link" type='button'>Get link</button>
+
+                   
+           <div id="textareabuttoncode">
+
+           <textarea style="display: none; font-size:9px; width: 100%" id="getbutton" rows="7" cols="60"></textarea>
+
+           <small>pure css style, easy change</small>
+
+           </div>
+
+        </div>
+
+      </div>
+
+    </form>
+
 
 <script>
-function tg() {
-    
-window.location = "tg://resolve?domain=" + window.location.pathname.substring(1);
+    document.getElementById('convert-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+    });
+    document.getElementById('inputUrl').addEventListener('keyup', function(e) {
+      if ( e.keyCode !== 13 ) {
+        return;
+      }
+      e.preventDefault();
+      getlink();
+    });
+
+function copied(id) {
+var btn = document.getElementById(id);
+var oldval = btn.innerHTML;
+btn.innerHTML = "Copied!";
+if(oldval!=btn.innerHTML) setTimeout(function() { btn.innerHTML = oldval; }, 1000);
+}
+
+function empty() {
+var btn = document.getElementById("inputUrl");
+var oldval = btn.placeholder;
+btn.focus();
+btn.placeholder = "Required!";
+if(oldval!=btn.placeholder) setTimeout(function() { btn.placeholder=oldval; }, 500);
+}
+
+function getlink() {
+    document.getElementById("getbutton").style.display="none";
+    function e(e) {
+        if(e.indexOf('https://') !== -1) {
+        document.getElementById("inputUrl").value = e, document.getElementById("inputUrl").select(), document.execCommand("copy");
+        copied("convert-link");
+        } else { empty(); }
+
+    }
+    var t = document.getElementById("inputUrl").value; t=t.trim();
+    if (t.match(/^[a-zA-Z\?=\d_-]+$/)) return e("https://" + window.location.host + "/" + t);
+    e(t = t.replace(/.*\.[^/]+/, "https://" + window.location.host).replace("http://", "https://").replace("@", "https://" + window.location.host + "/"))
 }
 
 
-document.getElementById("name").innerHTML =
-"@"+ window.location.pathname.substring(1);
 </script>
+    
+
+
+
+
+
   </body>
 </html>

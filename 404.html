@@ -65,7 +65,7 @@
   <i class="tgme_icon_user"></i>
 </div>
 <div class="tgme_page_description">
-  If you have <strong>Telegram</strong>, you can contact <a id="demo" class="tgme_username_link" ></a> right away.
+  If you have <strong>Telegram</strong>, you can contact <a id="name" onclick="tg()"class="tgme_username_link" ></a> right away.
 </div>
 <div class="tgme_page_action">
   <a onclick="tg()" class='footerbtn'> Send Message</a>
@@ -87,7 +87,7 @@ window.location = "tg://resolve?domain=" + window.location.pathname.substring(1)
 </script>
 
 <script>
-document.getElementById("demo").innerHTML =
+document.getElementById("name").innerHTML =
 "@"+ window.location.pathname.substring(1);
 </script>
   </body>
